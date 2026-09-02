@@ -1,13 +1,13 @@
-| <img src="docs/logo.svg" width="128"> |
+| <img src="docs/theme/logo.svg" width="128"> |
 | - |
 
-# [Course_Name], [BSc_MSc_PhD] Course @ [Your_University]
+# Data Security and Privacy, MSc Course @ University of Insubria
 
-This repository contains my personal notes for the [Course_Name] course at the [Your_University], part of the [BSc_MSc_PhD] in [Faculty_Name].
+This repository contains my project work for the Data Security and Privacy course at the University of Insubria, part of the MSc in Computer Science.
 
 ## Overview
 
-You can download my personal notes using the link below. To create your own notes, simply fork this repository and start editing using markdown.
+You can easily download my project work below, remember to use it responsibly and cite it if you reference it.
 
 ## Prerequisites
 
@@ -17,15 +17,22 @@ You can download my personal notes using the link below. To create your own note
 
 ## Notes
 
-| <a href="https://raw.githubusercontent.com/<username>/<repo_name>/<branch>/dist/Notes.pdf"><img src="docs/cover.png" alt="cover" height="256"></a> |
+| <a href="https://raw.githubusercontent.com/robertovicario/uninsubria-DATA_SECURITY_PRIVACY/main/dist/Project-Work.pdf"><img src="docs/theme/cover.png" alt="cover" height="256"></a> |
 | - |
 
 ## Instructions
 
-Usage:
+1. Usage:
 
 ```sh
-bash cmd.sh {setup|notes}
+bash cmd.sh <command>
+```
+
+2. Commands:
+
+```sh
+- [▶] notes
+- [⚙] setup
 ```
 
 ### `setup`
@@ -48,6 +55,16 @@ bash cmd.sh notes
 >
 > Before running this command, ensure to upload your own `front.pdf` into the `dist` directory. You can even let `pandoc` generate a title page for you by updating the `titlepage` field in the `docs/md/__metadata__.yml` file, and removing the `front.pdf` reference from the `cmd.sh` script.
 
+## Credits
+
+> [!WARNING]
+>
+> Please use this project responsibly, it was created by me for an exam session that I completed at _University of Insubria_. If you use or reference this project, please cite it as follows:
+>
+> ```bib
+> ...
+> ```
+
 ## License
 
-This project is distributed under [GNU General Public License version 3](https://opensource.org/license/gpl-3-0). You can find the complete text of the license in the project repository.
+This project is distributed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0" target="_blank">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International</a>. You can find the complete text of the license in the project repository.
