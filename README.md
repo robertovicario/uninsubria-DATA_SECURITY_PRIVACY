@@ -3,7 +3,7 @@
 
 # Data Security and Privacy, MSc Course @ University of Insubria
 
-This repository contains my project work for the Data Security and Privacy course at the University of Insubria, part of the MSc in Computer Science.
+This repository contains my project work for the ***Data Security and Privacy*** course at the ***University of Insubria***, part of the ***MSc in Computer Science***.
 
 ## Overview
 
@@ -45,7 +45,7 @@ bash cmd.sh setup
 
 ### `notes`
 
-The script will automatically generate the `content.pdf` file from the markdown files located in the `docs/md` directory and merge it with your `front.pdf` to create the final `Notes.pdf`:
+The script will automatically generate the `content.pdf` file from the markdown files located in the `docs/md` directory and merge it with your `front.pdf` to create the final `Project-Work.pdf`:
 
 ```sh
 bash cmd.sh notes
@@ -62,7 +62,12 @@ bash cmd.sh notes
 > Please use this project responsibly, it was created by me for an exam session that I completed at _University of Insubria_. If you use or reference this project, please cite it as follows:
 >
 > ```bib
-> ...
+> @software{Vicario_Pharmaceutical_Clinical_Trial,
+>     author = {Vicario, Roberto},
+>     title = {{Pharmaceutical Clinical Trial Database Management System}},
+>     url = {https://github.com/robertovicario/uninsubria-DATA_SECURITY_PRIVACY},
+>     version = {1.0.0}
+> }
 > ```
 
 ## License
