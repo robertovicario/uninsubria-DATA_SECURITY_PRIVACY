@@ -39,14 +39,14 @@ setup() {
 
 notes() {
 
-    printer -start "Generating notes..."
+    printer -start "Generating the notes..."
     mkdir -p dist
     FILES=()
     while IFS= read -r f; do
         FILES+=("$f")
-    done < <(printf "%s\n" md/*.md | sort -V)
+    done < <(printf "%s\n" md/notes/*.md | sort -V)
     pandoc "${FILES[@]}" \
-        -o dist/content.pdf \
+        -o dist/content-1.pdf \
         --metadata-file=md/__metadata__.yml \
         --from=markdown \
         --template=pandoc-latex-template/template-multi-file/eisvogel.latex \
@@ -57,8 +57,43 @@ notes() {
     local STATUS=$?
     if [ "$STATUS" -eq 0 ]; then
         pdfunite \
-            dist/front.pdf \
-            dist/content.pdf \
+            dist/front-1.pdf \
+            dist/content-1.pdf \
+            dist/Notes.pdf
+
+        STATUS=$?
+    fi
+    if [ "$STATUS" -eq 0 ]; then
+        open dist/
+        STATUS=$?
+    fi
+
+    # Handler
+    handler "$STATUS"
+}
+
+project() {
+
+    printer -start "Generating the project work..."
+    mkdir -p dist
+    FILES=()
+    while IFS= read -r f; do
+        FILES+=("$f")
+    done < <(printf "%s\n" md/project/*.md | sort -V)
+    pandoc "${FILES[@]}" \
+        -o dist/content-2.pdf \
+        --metadata-file=md/__metadata__.yml \
+        --from=markdown \
+        --template=pandoc-latex-template/template-multi-file/eisvogel.latex \
+        --pdf-engine=xelatex \
+        --filter=pandoc-latex-environment \
+        --syntax-highlighting=idiomatic
+
+    local STATUS=$?
+    if [ "$STATUS" -eq 0 ]; then
+        pdfunite \
+            dist/front-2.pdf \
+            dist/content-2.pdf \
             dist/Project-Work.pdf
 
         STATUS=$?
@@ -86,6 +121,7 @@ usage() {
 
 2. Commands:
     - [${ICON_START}] notes
+    - [${ICON_START}] project
     - [${ICON_SETUP}] setup
 
 EOF
@@ -153,6 +189,9 @@ handler() {
 case $1 in
     notes)
         notes
+        ;;
+    project)
+        project
         ;;
     setup)
         setup
